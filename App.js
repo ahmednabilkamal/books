@@ -1,10 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {QueryClient, QueryClientProvider} from 'react-query';
+
+import AppNavigation from './src/navigation/navigation';
 
 export default function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <View>
-      <Text>Hello World!!!</Text>
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <AppNavigation />
+    </QueryClientProvider>
   );
 }
